@@ -1,2 +1,5 @@
-# Uni-Projects
-Projects and practice work from my university learning journey.
+# University Projects
+
+This repository contains my university projects and learning practice.
+
+Each folder represents a subject or technology I am currently learning.
