@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="650" prefWidth="900" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+
+    <!-- TOP -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding><Insets left="10" top="10" /></padding>
+            <children>
+                <ComboBox fx:id="comboCourse" prefWidth="180" />
+                <Button onAction="#handleViewAction" text="View" />
+                <Label fx:id="statuslbl" />
+            </children>
+        </HBox>
+    </top>
+
+
+    <center>
+        <TableView fx:id="tblView" onMouseClicked="#handleTableClick">
+            <columns>
+                <TableColumn fx:id="rollColumn" prefWidth="100" text="Roll" />
+                <TableColumn fx:id="nameColumn" prefWidth="240" text="Name" />
+                <TableColumn fx:id="courseColumn" prefWidth="140" text="Course" />
+                <TableColumn fx:id="cgpaColumn" prefWidth="100" text="CGPA" />
+                <TableColumn fx:id="marksColumn" prefWidth="160" text="Total Marks" />
+            </columns>
+        </TableView>
+    </center>
+
+
+    <bottom>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+
+            <HBox spacing="10">
+                <Label text="Name" />
+                <TextField fx:id="txtName" />
+
+                <Label text="Roll" />
+                <TextField fx:id="txtRoll" />
+
+                <Label text="Course" />
+                <ComboBox fx:id="txtCourse" prefHeight="25.0" prefWidth="173.0" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Total Marks" />
+                <TextField fx:id="txtMarks" />
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#handleAddAction" prefHeight="25.0" prefWidth="118.0" text="Add" />
+                <Button onAction="#handleUpdateAction" prefHeight="25.0" prefWidth="109.0" text="Update" />
+                <Button onAction="#handleSearchAction" prefHeight="25.0" prefWidth="102.0" text="Search" />
+                <Button onAction="#handleDeleteAction" prefHeight="25.0" prefWidth="116.0" text="Delete" />
+                <Button onAction="#handleClearAction" prefHeight="25.0" prefWidth="104.0" text="Clear" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
